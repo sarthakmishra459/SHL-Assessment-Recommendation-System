@@ -1,9 +1,5 @@
 ### SHL Assessment Recommendation Test
 
-POST https://shl-assessment-recommendation-system.onrender.com/recommend
+GET https://shl-assessment-recommendation-system.onrender.com?query=Looking for a backend developer with OAuth experience
 Content-Type: application/json
 
-{
-  "query": "Looking for a backend developer with OAuth experience"
-}
-    

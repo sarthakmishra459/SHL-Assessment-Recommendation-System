@@ -120,3 +120,25 @@ def recommend_assessments(payload: QueryRequest):
     ]
 
     return {"query": enhanced_query, "results": formatted_results}
+from fastapi import  Query
+
+@app.get("/recommend")
+def recommend_assessments(query: str = Query(..., description="Enter job description or requirement")):
+    index, metadata = load_index_and_metadata()
+    enhanced_query = query_enhancer(query)
+    results = search_assessments(enhanced_query, index, metadata, k=10)
+
+    formatted_results = [
+        {
+            "name": r["name"],
+            "url": r["url"],
+            "remote_support": r["remote_support"],
+            "adaptive_support": r.get("adaptive_support", "N/A"),
+            "test_types": r.get("test_types", []),
+            "duration": r.get("duration", "N/A")
+        }
+        for r in results
+    ]
+
+    return {"query": enhanced_query, "results": formatted_results}
+
