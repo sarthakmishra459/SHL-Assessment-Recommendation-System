@@ -1,5 +1,4 @@
 google-genai==1.7.0
-faiss
 python-dotenv
 numpy
 streamlit
