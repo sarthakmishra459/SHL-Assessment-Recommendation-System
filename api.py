@@ -97,6 +97,10 @@ def search_assessments(query_text, index, metadata, k=10):
     return [metadata[i] for i in indices[0]]
 
 # --- API Endpoint ---
+@app.get("/")
+def root():
+    return {"message": "Assessment Recommendation API is running 🚀"}
+
 @app.post("/recommend")
 def recommend_assessments(payload: QueryRequest):
     index, metadata = load_index_and_metadata()
