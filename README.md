@@ -25,7 +25,6 @@ This project is an **intelligent assessment recommendation system** powered by G
 | `shl_assessments_pre.json`  | Pre-packaged job solutions from SHL |
 | `shl_faiss_index.index`     | Saved FAISS vector index of all assessments |
 | `shl_metadata.json`         | Metadata mapped to each vector (name, URL, duration, etc.) |
-| `sol.ipynb`                 | Jupyter notebook for experimentation and development |
 | `test.http`                 | Example REST Client request for testing API locally |
 | `requirements.txt`          | Python package dependencies |
 | `.gitignore`                | Files to be ignored in version control |
@@ -55,7 +54,34 @@ This project is an **intelligent assessment recommendation system** powered by G
    A simple interface (`app.py`) allows users to input job roles and view recommended assessments visually.
 
 ---
+## 🛠️ Installation & Setup
 
+Follow the steps below to set up and run the SHL Assessment Recommendation system locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sarthakmishra459/shl-assessment-recommendation.git
+cd shl-assessment-recommendation
+```
+### 2. 🔐 .env Configuration
+
+Create a `.env` file in the root directory and add your Gemini API key:
+```
+GOOGLE_API_KEY = [Your Api Key Here]
+```
+### 3. Install Dependencies
+```
+pip install -r requirements.txt
+```
+### 4. Run streamlit frontend
+```
+streamlit run app.py
+```
+### 5. Run fastapi backend for api testing
+```
+uvicorn api:app --reload
+```
 ## 📬 API Usage
 
 ### SHL Assessment Recommendation API
