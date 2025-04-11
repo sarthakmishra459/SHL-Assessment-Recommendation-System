@@ -6,6 +6,5 @@ fastapi
 uvicorn
 langchain_google_genai
 langchain
-langchain_community
 langchain_core
 faiss-cpu
